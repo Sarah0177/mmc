@@ -22,7 +22,7 @@
               </div>
               <a
                 v-if="item.type == 'email'"
-                class="text-gray-900 text-base hover:text-orange-600"
+                class="text-gray-900 text-base hover:text-orange-600 break-all"
                 :href="`mailto:${item.value}`"
                 >{{ item.value }}</a
               >
@@ -59,8 +59,8 @@
         </div>
       </div>
       <div class="bg-white p-8 lg:p-12">
-        <h3 class="text-xl font-semibold text-gray-900 mb-8 flex items-center">
-          <UIcon name="i-lucide-info" class="size-10 bg-orange-600 mr-2" />
+        <h3 class="text-xl font-semibold text-gray-900 mb-8 flex items-center ">
+          <UIcon name="i-lucide-info" class="size-10 bg-orange-600 mr-2 "/>
           Send Us a Message
         </h3>
         <div class="form space-y-6">
@@ -95,7 +95,7 @@
             <UButton
               trailing-icon="i-lucide-arrow-right"
               size="md"
-              class="bg-orange-500 font-bold text-white flex items-center uppercase font-medium py-3 px-10"
+              class="bg-orange-500 font-bold text-white flex items-center uppercase font-medium py-3 px-10 cursor-pointer"
               @click="open = true"
               >Send message</UButton
             >

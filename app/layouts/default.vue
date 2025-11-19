@@ -24,6 +24,6 @@ import Footer from "./Footer/index.vue";
 .content {
   min-height:calc(100vh - $header-height - $footer-height);
   margin-top: $header-height;
-  padding: 16px;
+  // padding: 16px;
 }
 </style>

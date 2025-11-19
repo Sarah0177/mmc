@@ -4,7 +4,7 @@ import { ref, watch } from "vue";
 const { locales, setLocale } = useI18n();
 let locale = ref(locales.value[0]);
 const toggle = () => {
-  // if (locales.value.length < 2) return;
+  if (locales.value.length < 2) return;
   const code = locale.value.code == "en" ? "zh" : "en";
   locale.value = locales.value.find((item) => item.code == code);
   console.log("locale value", locale.value);
@@ -36,7 +36,7 @@ const close = () => {
     <tabs-nav class="hidden horizontal lg:flex"></tabs-nav>
 
     <!-- 语言切换 -->
-    <div class="lang" @click="toggle">
+    <div v-if="locales.length > 1" class="lang" @click="toggle">
       {{ locale.name }}
     </div>
 
@@ -44,7 +44,7 @@ const close = () => {
     
     <!-- <div class=""> -->
     <UDrawer
-      v-model:open="open"
+      :open="open"
       direction="right"
       :overlay="true"
       :dismissable="true"
