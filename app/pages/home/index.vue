@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from "vue";
-import { useRouter } from "vue-router"
+import { useRouter } from "vue-router";
 import bg1 from "@/assets/images/home/bg-1.webp";
 import bg2 from "@/assets/images/home/bg-2.webp";
 import bg3 from "@/assets/images/home/bg-3.webp";
@@ -9,7 +9,7 @@ import product2 from "@/assets/images/product/product-2.webp";
 import product3 from "@/assets/images/product/product-3.webp";
 import product4 from "@/assets/images/product/product-4.webp";
 
-const router = useRouter()
+const router = useRouter();
 
 const swiperItems = [
   {
@@ -51,20 +51,20 @@ const productList = ref([
     id: "4",
     type: "resin",
   },
+  {
+    imgSrc: product1,
+    name: "Melamine resin - yellow",
+    id: "5",
+    type: "resin",
+  },
 ]);
-console.log("productlist", productList.value);
-
-const goToProduct = () => {
- router.push({path: '/product'})
-}
-
 </script>
 
 <template>
   <NuxtLayout name="default">
     <div class="wrap">
       <div
-        class="w-full h-[200px] md:h-[calc((100vh-80px)_/_2)] lg:h-[500px] overflow-hidden"
+        class="w-full h-[200px] md:h-[calc((100vh-80px)_/_2)] lg:h-[400px] overflow-hidden"
       >
         <UCarousel
           v-slot="{ item }"
@@ -92,23 +92,25 @@ const goToProduct = () => {
         </UCarousel>
       </div>
       <div class="py-8 md:py-12 mx-auto flex flex-col justify-center">
-        <p class="text-center uppercase font-bold text-2xl md:text-4xl">
+        <p class="text-center uppercase font-bold text-2xl">
           Product Catalogue
         </p>
+        <!-- 热门产品 -->
         <div class="flex justify-center">
           <div
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 px-8 py-8"
+            class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-16 py-8 px-4 max-w-7xl"
           >
             <product-item
               v-for="item in productList"
               :key="item.id"
               :item="item"
-              class="w-56 h-56 md:w-64 md:h-64"
+              class=""
             >
             </product-item>
           </div>
         </div>
-        <div class="w-full flex justify-center">
+        <!-- 更多产品 -->
+        <!-- <div class="w-full flex justify-center">
           <UButton
             class="cursor-pointer bg-orange-400 text-white px-4 py-2 rounded-full"
             trailing-icon="i-lucide-arrow-right"
@@ -116,6 +118,38 @@ const goToProduct = () => {
             to="/product"
             >More Categories</UButton
           >
+        </div> -->
+        <!-- 公司介绍 -->
+        <div
+          class="flex py-8 px-4 mt-8 grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto gap-4"
+        >
+          <div class="flex grid grid-cols-2 gap-4">
+            <img
+              class="w-64"
+              src="@/assets/images/company-1.webp"
+              alt="melamine"
+            />
+            <img
+              class="w-64"
+              src="@/assets/images/company-2.webp"
+              alt="melamine"
+            />
+          </div>
+          <div>
+            <p class="text-2xl font-bold py-6 mt-0">
+              Guangzhou Jamie Tableware Co., Ltd.
+            </p>
+            {{ $t("company") }}
+            <div class="w-full mt-4 flex justify-start">
+              <UButton
+                class="cursor-pointer bg-orange-400 text-white px-4 py-2 rounded-full"
+                trailing-icon="i-lucide-arrow-right"
+                size="xl"
+                to="/product"
+                >View More Products</UButton
+              >
+            </div>
+          </div>
         </div>
       </div>
     </div>

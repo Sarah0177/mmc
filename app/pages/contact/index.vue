@@ -38,7 +38,8 @@
         </div>
         <div class="follow mt-10 pt-8 border-t border-gray-200 relative z-20">
           <p class="text-gray-700 font-semibold mb-4">Follow Us:</p>
-          <div class="flex space-x-5">
+          <social-nav />
+          <!-- <div class="flex space-x-5">
             <UIcon
               name="i-ant-design-facebook-filled"
               class="w-6 h-6 text-gray-700 hover:text-orange-600"
@@ -55,7 +56,7 @@
               name="i-ant-design-wechat-filled"
               class="w-6 h-6 text-gray-700 hover:text-orange-600"
             />
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="bg-white p-8 lg:p-12">
