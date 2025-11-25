@@ -25,7 +25,7 @@ const close = () => {
 
 <template>
   <div
-    class="header flex justify-between items-center bg-orange-500 text-white"
+    class="header flex justify-between items-center text-gray-900 bg-white"
   >
     <!-- logo -->
     <div class="logo">
@@ -86,13 +86,16 @@ const close = () => {
 }
 
 .logo {
-  background-size: cover;
-  background-image: url("~/assets/images/logo/logo.webp");
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-image: url("~/assets/images/logo/logo.png");
   text-indent: -999px;
   .logo-link {
     display: block;
-    width: 128px;
-    height: $header-height;
+    height: 54px;
+    width: 200px;
+    // width: 128px;
+    // height: $header-height;
   }
 }
 

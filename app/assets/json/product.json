@@ -1,44 +1,59 @@
 [
     {
-        "title": "melamine moulding compound1",
+        "title": "melamine moulding compound",
         "description": "this is melamine moulding compound",
-        "img":"",
+        "img": "",
         "application": "",
-        "keywords:": "melamine moulding compound1"
+        "keywords:": "melamine moulding compound",
+        "type": "red_resin",
+        "model": "MMC-6102"
     },
     {
         "title": "melamine moulding compound2",
         "description": "this is melamine moulding compound",
-        "img":"",
+        "img": "",
         "application": "",
-        "keywords:": "melamine moulding compound2"
+        "keywords:": "melamine moulding compound2",
+        "type": "red_resin"
     },
     {
         "title": "melamine moulding compound3",
         "description": "this is melamine moulding compound",
-        "img":"",
+        "img": "",
         "application": "",
-        "keywords:": "melamine moulding compound3"
+        "keywords:": "melamine moulding compound3",
+        "type": "white_resin"
     },
     {
         "title": "melamine moulding compound4",
         "description": "this is melamine moulding compound",
-        "img":"",
+        "img": "",
         "application": "",
-        "keywords:": "melamine moulding compound4"
+        "keywords:": "melamine moulding compound4",
+        "type": "orange_resin"
     },
     {
         "title": "melamine moulding compound5",
         "description": "this is melamine moulding compound",
-        "img":"",
+        "img": "",
         "application": "",
-        "keywords:": "melamine moulding compound5"
+        "keywords:": "melamine moulding compound5",
+        "type": "orange_resin"
     },
     {
         "title": "melamine moulding compound6",
         "description": "this is melamine moulding compound",
-        "img":"",
+        "img": "",
         "application": "",
-        "keywords:": "melamine moulding compound6"
+        "keywords:": "melamine moulding compound6",
+        "type": "white_resin"
+    },
+    {
+        "title": "melamine moulding compound6",
+        "description": "this is melamine moulding compound",
+        "img": "",
+        "application": "",
+        "keywords:": "melamine moulding compound6",
+        "type": "green_resin"
     }
 ]

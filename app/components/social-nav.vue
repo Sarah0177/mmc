@@ -1,5 +1,5 @@
 <template>
-  <div class="flex space-x-5">
+  <div class="flex justify-center space-x-5">
     <UIcon
       name="i-ant-design-facebook-filled"
       class="w-6 h-6 text-gray-700 hover:text-orange-600"

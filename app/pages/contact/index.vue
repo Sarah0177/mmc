@@ -7,7 +7,7 @@
           Contact Information
         </h3>
         <div class="flex flex-col">
-          <div class="flex mb-8" v-for="item in list" :key="item.label">
+          <div class="flex mb-8" v-for="item in contactInfoList" :key="item.label">
             <div
               class="left mr-8 w-12 h-12 rounded-full bg-orange-100 flex flex-none justify-center items-center"
             >
@@ -39,24 +39,6 @@
         <div class="follow mt-10 pt-8 border-t border-gray-200 relative z-20">
           <p class="text-gray-700 font-semibold mb-4">Follow Us:</p>
           <social-nav />
-          <!-- <div class="flex space-x-5">
-            <UIcon
-              name="i-ant-design-facebook-filled"
-              class="w-6 h-6 text-gray-700 hover:text-orange-600"
-            />
-            <UIcon
-              name="i-ant-design-twitter-circle-filled"
-              class="w-6 h-6 text-gray-700 hover:text-orange-600"
-            />
-            <UIcon
-              name="i-ant-design-linkedin-filled"
-              class="w-6 h-6 text-gray-700 hover:text-orange-600"
-            />
-            <UIcon
-              name="i-ant-design-wechat-filled"
-              class="w-6 h-6 text-gray-700 hover:text-orange-600"
-            />
-          </div> -->
         </div>
       </div>
       <div class="bg-white p-8 lg:p-12">
@@ -108,25 +90,7 @@
 </template>
 <script lang="ts" setup>
 import { ref } from "vue";
-const list = [
-  {
-    type: "email",
-    icon: "i-lucide-mail",
-    label: "EMAIL",
-    value: "melamine_resin@gmail.com",
-  },
-  {
-    type: "phone",
-    icon: "i-lucide-smartphone",
-    label: "PHONE NUMBER",
-    value: "+86-18561632796",
-  },
-  {
-    icon: "i-lucide-map-pin",
-    label: "ADDRESS",
-    value: "No.16 Street, Industrial Park, Shannxi Province, China",
-  },
-];
+import { contactInfoList } from '@/assets/json/navMenu.js'
 
 let name = ref("");
 let email = ref("");

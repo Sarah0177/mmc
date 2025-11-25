@@ -70,13 +70,13 @@ const productList = ref([
           v-slot="{ item }"
           :items="swiperItems"
           loop
-          autoplay
+          
           class="w-full h-full"
         >
           <div class="relative">
             <img
               :src="item.img"
-              class="w-full h-[200px] md:h-[calc((100vh-80px)_/_2)] lg:h-[500px] object-cover"
+              class="w-full h-[200px] md:h-[calc((100vh-80px)_/_2)] lg:h-[400px] object-cover"
             />
             <div
               class="absolute top-0 right-0 w-full h-full flex items-center justify-center"

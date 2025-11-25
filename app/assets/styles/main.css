@@ -18,5 +18,16 @@
   --color-green-900: #0A5331;
   --color-green-950: #052E16;
 
-  --mainColorLight: rgb(253, 223, 206);
+  --color-mainColorLight-50: rgb(253, 223, 206);
+  --color-mainColorLight-50: rgb(253, 223, 206);
+  --color-mainColorLight-100: rgb(253, 223, 206);
+  --color-mainColorLight-200: rgb(253, 223, 206);
+  --color-mainColorLight-300: rgb(253, 223, 206);
+  --color-mainColorLight-400: rgb(253, 223, 206);
+  --color-mainColorLight-500: rgb(253, 223, 206);
+  --color-mainColorLight-600: rgb(253, 223, 206);
+  --color-mainColorLight-700: rgb(253, 223, 206);
+  --color-mainColorLight-800: rgb(253, 223, 206);
+  --color-mainColorLight-900: rgb(253, 223, 206);
+  --color-mainColorLight-950: rgb(253, 223, 206);
 }

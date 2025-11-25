@@ -1,21 +1,40 @@
 <template>
   <!-- 网站导航 -->
   <div class="tabs-nav">
-    <div class="tab-item" v-for="item in menu" :key="item.name">
-      <NuxtLink class="nav-link py-1 hover:text-orange-600" :activeClass="activeClass" :to="item.to">{{ item.name }}</NuxtLink>
+    <div class="tab-item" v-for="item in productTypes" :key="item.name">
+      <NuxtLink
+        class="nav-link py-1 hover:text-orange-600"
+        :class="ui"
+        :activeClass="activeClass"
+        to="/product"
+        >{{ item.name }}</NuxtLink
+      >
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { getMenu } from '@/assets/json/navMenu.js'
-import { ref } from 'vue'
+import { getProductTypes } from "@/assets/json/navMenu.js";
+import { ref } from "vue";
 
-defineProps({
+const props = defineProps({
   activeClass: String,
-})
-const { t } = useI18n()
-const menu = ref(getMenu(t))
+  exactActiveClass: String,
+  ui: String,
+  hasAll: Boolean,
+});
+
+const { t } = useI18n();
+let defaultList = getProductTypes(t);
+if (props.hasAll) {
+  defaultList.unshift({
+    name: t("all"),
+    model: "",
+    type: "",
+    subType: [],
+  });
+}
+const productTypes = ref(defaultList);
 </script>
 
 <style lang="scss" scoped>
@@ -53,5 +72,8 @@ const menu = ref(getMenu(t))
       margin-left: 48px;
     }
   }
+}
+.active-tab {
+  background: orange;
 }
 </style>

@@ -20,10 +20,12 @@ import Footer from "./Footer/index.vue";
 <style lang="scss" scoped>
 .default-layout {
   height: calc(100vh - $header-height);
+  // overflow: hidden;
 }
 .content {
-  min-height:calc(100vh - $header-height - $footer-height);
+  min-height: calc(100vh - $header-height);
   margin-top: $header-height;
+  // overflow-y: scroll;
   // padding: 16px;
 }
 </style>
