@@ -42,7 +42,8 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'zh-cn'
       }
-    }
+    },
+    baseURL: '/mmc/'
   },
   ssr: true,
   nitro: {
