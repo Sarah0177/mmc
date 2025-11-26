@@ -1,5 +1,5 @@
 <template>
-  <UApp>
+  <UApp :toaster="toaster">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
@@ -7,6 +7,10 @@
 </template>
 
 <script lang="ts" setup>
+const toaster = {
+  max: 1,
+  position:'top-center'
+}
 useHead({
   title: "MMC",
   meta: [
