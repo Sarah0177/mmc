@@ -7,7 +7,11 @@
           Contact Information
         </h3>
         <div class="flex flex-col">
-          <div class="flex mb-8" v-for="item in contactInfoList" :key="item.label">
+          <div
+            class="flex mb-8"
+            v-for="item in contactInfoList"
+            :key="item.label"
+          >
             <div
               class="left mr-8 w-12 h-12 rounded-full bg-orange-100 flex flex-none justify-center items-center"
             >
@@ -42,8 +46,8 @@
         </div>
       </div>
       <div class="bg-white p-8 lg:p-12">
-        <h3 class="text-xl font-semibold text-gray-900 mb-8 flex items-center ">
-          <UIcon name="i-lucide-info" class="size-10 bg-orange-600 mr-2 "/>
+        <h3 class="text-xl font-semibold text-gray-900 mb-8 flex items-center">
+          <UIcon name="i-lucide-info" class="size-10 bg-orange-600 mr-2" />
           Send Us a Message
         </h3>
         <div class="form space-y-6">
@@ -79,7 +83,7 @@
               trailing-icon="i-lucide-arrow-right"
               size="md"
               class="bg-orange-500 font-bold text-white flex items-center uppercase font-medium py-3 px-10 cursor-pointer"
-              @click="open = true"
+              @click="send"
               >Send message</UButton
             >
           </div>
@@ -89,8 +93,12 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref } from "vue";
-import { contactInfoList } from '@/assets/json/navMenu.js'
+import { ref, computed } from "vue";
+
+import { contactInfoList } from "@/assets/json/navMenu.js";
+
+const { t } = useI18n();
+const toast = useToast();
 
 let name = ref("");
 let email = ref("");
@@ -98,11 +106,51 @@ let phone = ref("");
 let message = ref("");
 const open = ref(false);
 
-const send = () => {
-  open.value = !open.value;
-  console.log("value", open);
-  // if(!message.value) {
-  //     alert('1')
-  // }
+// console.log('baseurl', config.baseurl)
+const clear = () => {
+  name.value = ''
+  email.value = ''
+  phone.value = ''
+  message.value = ''
+}
+
+const canSubmit = computed(() => {
+  return !!name.value && !!(email.value || phone.value) && !!message.value
+})
+
+const send = async () => {
+  console.log("canSubmit", canSubmit);
+  if(!canSubmit.value) {
+    toast.add({
+      title: 'Please fill in the form data'
+    })
+    return 
+  }
+  try {
+    const { data, ip, pending, error } = await $fetch("/mmc/api/submit", {
+      immediate: false, // 设置为 false，不在组件加载时立即执行
+      method: "POST",
+      body: {
+        email: email.value,
+        phone: phone.value,
+        message: message.value,
+        name: name.value,
+      },
+    });
+    console.log("data=====", data);
+    toast.add({
+      title: `ip: ${ip} - ${t("send_successfully")}`,
+      icon: "i-lucide-wifi",
+      progress: false,
+      color: "success",
+    });
+    // 清空页面数据
+    clear()
+  } catch (error) {
+    toast.add({
+      title: "抱歉",
+      color: "error",
+    });
+  }
 };
 </script>
