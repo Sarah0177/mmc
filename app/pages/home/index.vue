@@ -31,33 +31,47 @@ const productList = ref([
     imgSrc: product1,
     name: "Melamine resin - white",
     id: "1",
-    type: "resin",
+    type: "red_resin",
   },
   {
     imgSrc: product2,
     name: "Melamine resin - pink",
     id: "2",
-    type: "resin",
+    type: "white_resin",
   },
   {
     imgSrc: product3,
     name: "Melamine resin - blue",
     id: "3",
-    type: "resin",
+    type: "orange_resin",
   },
   {
     imgSrc: product4,
     name: "Melamine resin - orange",
     id: "4",
-    type: "resin",
+    type: "green_resin",
   },
   {
     imgSrc: product1,
     name: "Melamine resin - yellow",
     id: "5",
-    type: "resin",
+    type: "green_resin",
   },
 ]);
+
+const productClickHandler = (item) => {
+  console.log('item', item)
+
+  router.push({
+    path: '/product',
+    query: {
+      type: item.type
+    }
+  })
+}
+
+
+
 </script>
 
 <template>
@@ -105,6 +119,7 @@ const productList = ref([
               :key="item.id"
               :item="item"
               class=""
+              @click="productClickHandler(item)"
             >
             </product-item>
           </div>

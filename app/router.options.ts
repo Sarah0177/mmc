@@ -14,6 +14,12 @@ export default {
     {
       path: "/product",
       component: () => import("~/pages/product/index.vue"),
+      name: 'product-home'
+    },
+    {
+      path: '/product/:model',
+      component: () => import("~/pages/product/[model].vue"),
+      name: 'product-detail',
     },
     {
       path: "/contact",
