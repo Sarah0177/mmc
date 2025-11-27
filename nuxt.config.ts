@@ -1,6 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
+  devServer: {
+    host: '0.0.0.0'
+  },
   devtools: { enabled: true },
   modules: ['@nuxt/ui', "nuxt-windicss", "@nuxtjs/i18n"],
   // modules: ['@nuxt/ui', "@nuxtjs/i18n"],

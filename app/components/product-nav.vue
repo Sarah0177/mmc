@@ -6,7 +6,8 @@
         class="nav-link py-1 hover:text-orange-600"
         :class="ui"
         :activeClass="activeClass"
-        to="/product"
+        @click="scrollToTop"
+        :to="{ name: 'product-home', query: { type: item.type } }"
         >{{ item.name }}</NuxtLink
       >
     </div>
@@ -35,6 +36,13 @@ if (props.hasAll) {
   });
 }
 const productTypes = ref(defaultList);
+
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior:'smooth'
+  })
+}
 </script>
 
 <style lang="scss" scoped>

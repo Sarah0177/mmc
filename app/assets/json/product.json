@@ -1,5 +1,6 @@
 [
     {
+        "id": "1",
         "title": "melamine moulding compound",
         "description": "this is melamine moulding compound",
         "img": "",
@@ -9,12 +10,13 @@
         "model": "MMC-6102"
     },
     {
+        "id": "2",
         "title": "melamine moulding compound2",
         "description": "this is melamine moulding compound",
         "img": "",
         "application": "",
         "keywords:": "melamine moulding compound2",
-        "type": "red_resin"
+        "model": "MMC-6103"
     },
     {
         "title": "melamine moulding compound3",
@@ -22,7 +24,8 @@
         "img": "",
         "application": "",
         "keywords:": "melamine moulding compound3",
-        "type": "white_resin"
+        "type": "white_resin",
+        "model": "MMC-6104"
     },
     {
         "title": "melamine moulding compound4",
@@ -30,7 +33,8 @@
         "img": "",
         "application": "",
         "keywords:": "melamine moulding compound4",
-        "type": "orange_resin"
+        "type": "orange_resin",
+        "model": "MMC-6105"
     },
     {
         "title": "melamine moulding compound5",
@@ -38,7 +42,8 @@
         "img": "",
         "application": "",
         "keywords:": "melamine moulding compound5",
-        "type": "orange_resin"
+        "type": "orange_resin",
+        "model": "MMC-6106"
     },
     {
         "title": "melamine moulding compound6",
@@ -46,7 +51,8 @@
         "img": "",
         "application": "",
         "keywords:": "melamine moulding compound6",
-        "type": "white_resin"
+        "type": "white_resin",
+        "model": "MMC-6107"
     },
     {
         "title": "melamine moulding compound6",
@@ -54,6 +60,7 @@
         "img": "",
         "application": "",
         "keywords:": "melamine moulding compound6",
-        "type": "green_resin"
+        "type": "green_resin",
+        "model": "MMC-6108"
     }
 ]
