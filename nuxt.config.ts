@@ -4,6 +4,21 @@ export default defineNuxtConfig({
   devServer: {
     host: '0.0.0.0'
   },
+  runtimeConfig: {
+    // 私有键，仅在服务端可用
+    databaseUrl: process.env.DATABASE_URL,
+  },
+  build: {
+    transpile: ['@prisma/client']
+  },
+  experimental: {
+    componentIslands: true,
+    inlineSSRStyles: false
+  },
+  // alias: {
+  //   '@': './src',
+  //   '~': './src'
+  // },
   devtools: { enabled: true },
   modules: ['@nuxt/ui', "nuxt-windicss", "@nuxtjs/i18n"],
   // modules: ['@nuxt/ui', "@nuxtjs/i18n"],
@@ -23,10 +38,8 @@ export default defineNuxtConfig({
     '@/assets/styles/global.scss',
     '@/assets/styles/main.css',
   ],
-  experimental: {
-    inlineSSRStyles: false
-  },
   vite: {
+    // plugins: [require('vite-tsconfig-paths')()],
     css: {
       preprocessorOptions: {
         scss: {

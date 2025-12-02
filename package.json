@@ -12,12 +12,21 @@
   "dependencies": {
     "@nuxt/ui": "^4.1.0",
     "@nuxtjs/i18n": "^10.2.0",
+    "@prisma/adapter-pg": "^7.0.1",
+    "@prisma/client": "^7.0.1",
+    "dotenv": "^17.2.3",
     "nuxt": "^4.2.0",
+    "pg": "^8.16.3",
+    "tsx": "^4.21.0",
     "vue": "^3.5.22",
     "vue-router": "^4.6.3"
   },
   "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@types/pg": "^8.15.6",
     "nuxt-windicss": "^3.0.1",
-    "sass-embedded": "^1.93.3"
+    "prisma": "^7.0.1",
+    "sass-embedded": "^1.93.3",
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }
