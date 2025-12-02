@@ -49,6 +49,9 @@
         <h3 class="text-xl font-semibold text-gray-900 mb-8 flex items-center">
           <UIcon name="i-lucide-info" class="size-10 bg-orange-600 mr-2" />
           Send Us a Message
+          <span class="ml-4" @click="isShowMessageList = !isShowMessageList"
+            >点击查看消息</span
+          >
         </h3>
         <div class="form space-y-6">
           <UInput
@@ -90,6 +93,9 @@
         </div>
       </div>
     </div>
+    <div v-show="isShowMessageList">
+      <NuxtIsland name="Message"></NuxtIsland>
+    </div>
   </div>
 </template>
 <script lang="ts" setup>
@@ -99,6 +105,7 @@ import { contactInfoList } from "@/assets/json/navMenu.js";
 
 const { t } = useI18n();
 const toast = useToast();
+const isShowMessageList = ref(false);
 
 let name = ref("");
 let email = ref("");
@@ -108,23 +115,23 @@ const open = ref(false);
 
 // console.log('baseurl', config.baseurl)
 const clear = () => {
-  name.value = ''
-  email.value = ''
-  phone.value = ''
-  message.value = ''
-}
+  name.value = "";
+  email.value = "";
+  phone.value = "";
+  message.value = "";
+};
 
 const canSubmit = computed(() => {
-  return !!name.value && !!(email.value || phone.value) && !!message.value
-})
+  return !!name.value && !!(email.value || phone.value) && !!message.value;
+});
 
 const send = async () => {
   console.log("canSubmit", canSubmit);
-  if(!canSubmit.value) {
+  if (!canSubmit.value) {
     toast.add({
-      title: 'Please fill in the form data'
-    })
-    return 
+      title: "Please fill in the form data",
+    });
+    return;
   }
   try {
     const { data, ip, pending, error } = await $fetch("/mmc/api/submit", {
@@ -145,7 +152,7 @@ const send = async () => {
       color: "success",
     });
     // 清空页面数据
-    clear()
+    clear();
   } catch (error) {
     toast.add({
       title: "抱歉",
