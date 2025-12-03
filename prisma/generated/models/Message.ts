@@ -40,6 +40,7 @@ export type MessageMinAggregateOutputType = {
   name: string | null
   message: string | null
   phone: string | null
+  createAt: Date | null
 }
 
 export type MessageMaxAggregateOutputType = {
@@ -48,6 +49,7 @@ export type MessageMaxAggregateOutputType = {
   name: string | null
   message: string | null
   phone: string | null
+  createAt: Date | null
 }
 
 export type MessageCountAggregateOutputType = {
@@ -56,6 +58,7 @@ export type MessageCountAggregateOutputType = {
   name: number
   message: number
   phone: number
+  createAt: number
   _all: number
 }
 
@@ -74,6 +77,7 @@ export type MessageMinAggregateInputType = {
   name?: true
   message?: true
   phone?: true
+  createAt?: true
 }
 
 export type MessageMaxAggregateInputType = {
@@ -82,6 +86,7 @@ export type MessageMaxAggregateInputType = {
   name?: true
   message?: true
   phone?: true
+  createAt?: true
 }
 
 export type MessageCountAggregateInputType = {
@@ -90,6 +95,7 @@ export type MessageCountAggregateInputType = {
   name?: true
   message?: true
   phone?: true
+  createAt?: true
   _all?: true
 }
 
@@ -185,6 +191,7 @@ export type MessageGroupByOutputType = {
   name: string
   message: string
   phone: string | null
+  createAt: Date
   _count: MessageCountAggregateOutputType | null
   _avg: MessageAvgAggregateOutputType | null
   _sum: MessageSumAggregateOutputType | null
@@ -216,6 +223,7 @@ export type MessageWhereInput = {
   name?: Prisma.StringFilter<"Message"> | string
   message?: Prisma.StringFilter<"Message"> | string
   phone?: Prisma.StringNullableFilter<"Message"> | string | null
+  createAt?: Prisma.DateTimeFilter<"Message"> | Date | string
 }
 
 export type MessageOrderByWithRelationInput = {
@@ -224,6 +232,7 @@ export type MessageOrderByWithRelationInput = {
   name?: Prisma.SortOrder
   message?: Prisma.SortOrder
   phone?: Prisma.SortOrderInput | Prisma.SortOrder
+  createAt?: Prisma.SortOrder
 }
 
 export type MessageWhereUniqueInput = Prisma.AtLeast<{
@@ -235,6 +244,7 @@ export type MessageWhereUniqueInput = Prisma.AtLeast<{
   name?: Prisma.StringFilter<"Message"> | string
   message?: Prisma.StringFilter<"Message"> | string
   phone?: Prisma.StringNullableFilter<"Message"> | string | null
+  createAt?: Prisma.DateTimeFilter<"Message"> | Date | string
 }, "id">
 
 export type MessageOrderByWithAggregationInput = {
@@ -243,6 +253,7 @@ export type MessageOrderByWithAggregationInput = {
   name?: Prisma.SortOrder
   message?: Prisma.SortOrder
   phone?: Prisma.SortOrderInput | Prisma.SortOrder
+  createAt?: Prisma.SortOrder
   _count?: Prisma.MessageCountOrderByAggregateInput
   _avg?: Prisma.MessageAvgOrderByAggregateInput
   _max?: Prisma.MessageMaxOrderByAggregateInput
@@ -259,6 +270,7 @@ export type MessageScalarWhereWithAggregatesInput = {
   name?: Prisma.StringWithAggregatesFilter<"Message"> | string
   message?: Prisma.StringWithAggregatesFilter<"Message"> | string
   phone?: Prisma.StringNullableWithAggregatesFilter<"Message"> | string | null
+  createAt?: Prisma.DateTimeWithAggregatesFilter<"Message"> | Date | string
 }
 
 export type MessageCreateInput = {
@@ -266,6 +278,7 @@ export type MessageCreateInput = {
   name: string
   message: string
   phone?: string | null
+  createAt?: Date | string
 }
 
 export type MessageUncheckedCreateInput = {
@@ -274,6 +287,7 @@ export type MessageUncheckedCreateInput = {
   name: string
   message: string
   phone?: string | null
+  createAt?: Date | string
 }
 
 export type MessageUpdateInput = {
@@ -281,6 +295,7 @@ export type MessageUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
   phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type MessageUncheckedUpdateInput = {
@@ -289,6 +304,7 @@ export type MessageUncheckedUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
   phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type MessageCreateManyInput = {
@@ -297,6 +313,7 @@ export type MessageCreateManyInput = {
   name: string
   message: string
   phone?: string | null
+  createAt?: Date | string
 }
 
 export type MessageUpdateManyMutationInput = {
@@ -304,6 +321,7 @@ export type MessageUpdateManyMutationInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
   phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type MessageUncheckedUpdateManyInput = {
@@ -312,6 +330,7 @@ export type MessageUncheckedUpdateManyInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.StringFieldUpdateOperationsInput | string
   phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type MessageCountOrderByAggregateInput = {
@@ -320,6 +339,7 @@ export type MessageCountOrderByAggregateInput = {
   name?: Prisma.SortOrder
   message?: Prisma.SortOrder
   phone?: Prisma.SortOrder
+  createAt?: Prisma.SortOrder
 }
 
 export type MessageAvgOrderByAggregateInput = {
@@ -332,6 +352,7 @@ export type MessageMaxOrderByAggregateInput = {
   name?: Prisma.SortOrder
   message?: Prisma.SortOrder
   phone?: Prisma.SortOrder
+  createAt?: Prisma.SortOrder
 }
 
 export type MessageMinOrderByAggregateInput = {
@@ -340,6 +361,7 @@ export type MessageMinOrderByAggregateInput = {
   name?: Prisma.SortOrder
   message?: Prisma.SortOrder
   phone?: Prisma.SortOrder
+  createAt?: Prisma.SortOrder
 }
 
 export type MessageSumOrderByAggregateInput = {
@@ -352,6 +374,10 @@ export type NullableStringFieldUpdateOperationsInput = {
 
 export type StringFieldUpdateOperationsInput = {
   set?: string
+}
+
+export type DateTimeFieldUpdateOperationsInput = {
+  set?: Date | string
 }
 
 export type IntFieldUpdateOperationsInput = {
@@ -370,6 +396,7 @@ export type MessageSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   name?: boolean
   message?: boolean
   phone?: boolean
+  createAt?: boolean
 }, ExtArgs["result"]["message"]>
 
 export type MessageSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -378,6 +405,7 @@ export type MessageSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   name?: boolean
   message?: boolean
   phone?: boolean
+  createAt?: boolean
 }, ExtArgs["result"]["message"]>
 
 export type MessageSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -386,6 +414,7 @@ export type MessageSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   name?: boolean
   message?: boolean
   phone?: boolean
+  createAt?: boolean
 }, ExtArgs["result"]["message"]>
 
 export type MessageSelectScalar = {
@@ -394,9 +423,10 @@ export type MessageSelectScalar = {
   name?: boolean
   message?: boolean
   phone?: boolean
+  createAt?: boolean
 }
 
-export type MessageOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "name" | "message" | "phone", ExtArgs["result"]["message"]>
+export type MessageOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "name" | "message" | "phone" | "createAt", ExtArgs["result"]["message"]>
 
 export type $MessagePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Message"
@@ -407,6 +437,7 @@ export type $MessagePayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     name: string
     message: string
     phone: string | null
+    createAt: Date
   }, ExtArgs["result"]["message"]>
   composites: {}
 }
@@ -835,6 +866,7 @@ export interface MessageFieldRefs {
   readonly name: Prisma.FieldRef<"Message", 'String'>
   readonly message: Prisma.FieldRef<"Message", 'String'>
   readonly phone: Prisma.FieldRef<"Message", 'String'>
+  readonly createAt: Prisma.FieldRef<"Message", 'DateTime'>
 }
     
 

@@ -10,13 +10,15 @@ const messageData = [
     name: 'Alice-test',
     email: 'alice@prisma.io',
     phone: "192002",
-    message: "111"
+    message: "111",
+    createAt: new Date()
   },
   {
     name: 'Nilu-test',
     email: 'nilu@prisma.io',
     phone: "180303",
-    message: "222"
+    message: "222",
+    createAt: new Date()
   }
 ]
 

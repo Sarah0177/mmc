@@ -19,4 +19,5 @@ model Message {
   name    String
   message String
   phone   String?
+  createAt DateTime @default(now())
 }

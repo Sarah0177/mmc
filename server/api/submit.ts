@@ -24,6 +24,7 @@ export default defineEventHandler(async (event) => {
     }
     
   } catch (err) {
+    console.log('err', err)
     return {
       error: true,
       message: "sorry, something is wrong",
