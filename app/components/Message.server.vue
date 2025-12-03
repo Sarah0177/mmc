@@ -18,6 +18,7 @@ try {
   message = await getMessage();
   console.log('query messages successfully')
 } catch(err) {
+  console.log('err', err)
   console.log('failed to query messages')
 }
 </script>
