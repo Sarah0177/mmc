@@ -36,7 +36,7 @@
         <div class="desc">
           <span class="bold">Description: </span>{{ item.description }}
         </div>
-        <div class="application">
+        <div class="application" v-show="item.application">
           <span class="bold">Application: </span>{{ item.application }}
         </div>
       </div>
@@ -122,12 +122,9 @@ const clickProductHandler = (item) => {
 
 <style type="scss" scoped>
 .item {
-  /* width: calc(50% - 20px); */
-  /* height: 200px; */
-  padding: 10px;
+  padding: 16px;
   border: 1px solid #efefef;
   border-radius: 8px;
-  /* margin: 10px; */
 }
 
 .title {
