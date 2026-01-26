@@ -11,6 +11,9 @@ export default defineNuxtConfig({
   build: {
     transpile: ['@prisma/client']
   },
+  routeRules: {
+    '/': { prerender: true }
+  },
   experimental: {
     componentIslands: true,
     inlineSSRStyles: false
@@ -59,10 +62,10 @@ export default defineNuxtConfig({
         lang: 'zh-cn'
       }
     },
-    baseURL: '/mmc/'
+    // baseURL: '/mmc/'
   },
-  ssr: true,
+  ssr: false,
   nitro: {
-    preset: 'vercel'
+    preset: 'netlify'
   },
 })
