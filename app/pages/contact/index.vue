@@ -134,7 +134,7 @@ const send = async () => {
     return;
   }
   try {
-    const { data, ip, pending, error } = await $fetch("/mmc/api/submit", {
+    const { data, ip, pending, error } = await $fetch("/api/submit", {
       immediate: false, // 设置为 false，不在组件加载时立即执行
       method: "POST",
       body: {
